@@ -54,6 +54,24 @@ namespace dotnetapp.Controllers
             return Created("Added Team",t);
         }
 
+        [HttpGet]
+        [Route("ShowTeam")]
+        public IActionResult GetTeam()
+        {
+            var data = _context.Teams.ToList();
+            return Ok(data);
+
+        }
+
+        [HttpPut]
+        [Route("EditPlayer/{id}")]
+        public IActionResult PutPlayer(int id,Player p)
+        {
+
+            Player player = _context.Players.Find(p.Id);
+
+        }
+
         
     }
 }

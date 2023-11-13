@@ -11,6 +11,6 @@ namespace dotnetapp.Models{
         [Key]
         public int TeamID{get;set;}
         public string Name{get;set;}
-        public ICollection<Player>Players{get;set;}
+        public ICollection<Player>?Players{get;set;}
     }
 }
