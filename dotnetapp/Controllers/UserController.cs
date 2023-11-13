@@ -7,7 +7,8 @@ using dotnetapp.Models;
 namespace dotnetapp.Controllers
 {
     
-
+    [ApiController]
+    [Route("/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -16,6 +17,10 @@ namespace dotnetapp.Controllers
         {
             _context = context;
         }
+
+        [HttpGet]
+        [Route()]
+        public IActionResult 
 
         
     }
