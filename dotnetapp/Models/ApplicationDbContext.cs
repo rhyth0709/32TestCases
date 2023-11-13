@@ -3,13 +3,21 @@ using dotnetapp.Models;
 
 namespace dotnetapp.Models
 {
-    public class ApplicationDbContext : DbContext
-    {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+
+    public class ApplicationDbContext : DbContext{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        // Add DbSet properties for other entities as needed
-    }
+        protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if(!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("User ID=sa;password=examlyMssql@123; server=localhost;Database=PlayerDb;trusted_connection=false;Persist Security Info=False;Encrypt=False;");
+
+            }
+        }
+        public virtual DbSet<Player>Players{get;set;}
+        public virtual DbSet<Team>Teams{get;set;}
+}
 }
