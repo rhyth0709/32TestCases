@@ -19,8 +19,40 @@ namespace dotnetapp.Controllers
         }
 
         [HttpGet]
-        [Route()]
-        public IActionResult 
+        [Route("ShowPlayers")]
+        public IActionResult GetPlayers(){
+
+         var data = _context.Players.ToList();
+         return Ok(data);
+        }
+
+
+        [HttpPost]
+        [Route("AddPlayer")]
+        public IActionResult PostPlayers(Player p){
+
+            if(ModelState.IsValid)
+            {
+                _context.Players.Add(p);
+                _context.SaveChanges();
+              
+
+            }
+               return Created("Record Added",p);
+
+        }
+
+        [HttpPost]
+        [Route("AddTeam")]
+        public IActionResult PostTeam(Team t)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Teams.Add(t);
+                _context.SaveChanges();
+            }
+            return Created("Added Team",t);
+        }
 
         
     }
