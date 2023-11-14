@@ -68,7 +68,50 @@ namespace dotnetapp.Controllers
         public IActionResult PutPlayer(int id,Player p)
         {
 
-            Player player = _context.Players.Find(p.Id);
+            if(ModelState.IsValid)
+            {
+                Player player = _context.Players.Find(p.Id);
+                player.Age = p.Age;
+                player.BiddingPrice = p.BiddingPrice;
+                player.Category = p.Category;
+                _context.SaveChanges();
+                return Ok();
+            
+            }
+
+            return BadRequest("Unable to Edit Player");
+
+        }
+
+        [HttpDelete]
+        [Route("DeletePlayer/{id}")]
+        public IActionResult DeletePlay(int id){
+
+                var data = _context.Players.Find(id);
+                if(data==null)
+                return NotFound();
+                _context.Players.Remove(data);
+                _context.SaveChanges();
+                return Ok();
+
+
+        }
+
+        [HttpPut]
+        [Route("EditTeam/{id}")]
+         public IActionResult PutTeam(int id,Team t)
+        {
+
+            if(ModelState.IsValid)
+            {
+                Team team = _context.Teams.Find(t.TeamID);
+                team.Name = t.Name;
+                _context.SaveChanges();
+                return Ok();
+            
+            }
+
+            return BadRequest("Unable to Edit Team");
 
         }
 
