@@ -26,6 +26,15 @@ namespace dotnetapp.Controllers
          return Ok(data);
         }
 
+        [HttpGet]
+        [Route("ShowTeam")]
+        public IActionResult GetTeam()
+        {
+            var data = _context.Teams.ToList();
+            return Ok(data);
+
+        }
+
 
         [HttpPost]
         [Route("AddPlayer")]
@@ -54,14 +63,7 @@ namespace dotnetapp.Controllers
             return Created("Added Team",t);
         }
 
-        [HttpGet]
-        [Route("ShowTeam")]
-        public IActionResult GetTeam()
-        {
-            var data = _context.Teams.ToList();
-            return Ok(data);
-
-        }
+        
 
         [HttpPut]
         [Route("EditPlayer/{id}")]
@@ -82,21 +84,6 @@ namespace dotnetapp.Controllers
             return BadRequest("Unable to Edit Player");
 
         }
-
-        [HttpDelete]
-        [Route("DeletePlayer/{id}")]
-        public IActionResult DeletePlay(int id){
-
-                var data = _context.Players.Find(id);
-                if(data==null)
-                return NotFound();
-                _context.Players.Remove(data);
-                _context.SaveChanges();
-                return Ok();
-
-
-        }
-
         [HttpPut]
         [Route("EditTeam/{id}")]
          public IActionResult PutTeam(int id,Team t)
@@ -113,6 +100,42 @@ namespace dotnetapp.Controllers
 
             return BadRequest("Unable to Edit Team");
 
+        }
+         [HttpDelete]
+        [Route("DeletePlayer/{id}")]
+        public IActionResult DeletePlay(int id){
+
+                var data = _context.Players.Find(id);
+                if(data==null)
+                return NotFound();
+                _context.Players.Remove(data);
+                _context.SaveChanges();
+                return Ok();
+
+
+        }
+
+        [HttpDelete]
+        [Route("DeleteTeam/{id}")]
+        public IActionResult DeleteTeam(int id)
+        {
+
+        
+            try {
+                var detail=_context.Players.Where(d=>d.TeamID == id);
+                if(detail.Count() != 0){
+                    throw new System.Exception("Cannot Delete Teams because Team has Players");
+                }
+                var data= _context.Teams.Find(id);
+                _context.Teams.Remove(data);
+                _context.SaveChanges();
+                return Ok();
+            }
+            catch(System.Exception ex){
+                return BadRequest(ex.Message);
+            }
+
+             
         }
 
         
