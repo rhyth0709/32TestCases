@@ -120,7 +120,8 @@ namespace dotnetapp.Controllers
         public IActionResult DeleteTeam(int id)
         {
 
-        
+//        [18:32] Divakar S
+// dotnet build && dotnet test -l "console;verbosity=normal"; 
             try {
                 var detail=_context.Players.Where(d=>d.TeamID == id);
                 if(detail.Count() != 0){
