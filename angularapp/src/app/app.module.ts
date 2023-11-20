@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ListPlayersComponent } from './list-players/list-players.component';
 import { ListTeamsComponent } from './list-teams/list-teams.component';
 import { AddPlayersComponent } from './add-players/add-players.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import { AddPlayersComponent } from './add-players/add-players.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
