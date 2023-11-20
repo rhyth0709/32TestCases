@@ -7,8 +7,8 @@ using dotnetapp.Models;
 namespace dotnetapp.Controllers
 {
     
-    [ApiController]
-    [Route("/[controller]")]
+    // [ApiController]
+    // [Route("/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext context;
