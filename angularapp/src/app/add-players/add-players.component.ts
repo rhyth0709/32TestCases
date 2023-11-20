@@ -24,7 +24,9 @@ export class AddPlayersComponent implements OnInit {
       name :['',Validators.required],
       age : ['',Validators.required],
       teamID : ['',Validators.required],
-      biddingPrice : ['',Validators.required]
+      biddingPrice : ['',Validators.required],
+      category : ['',Validators.required],
+    
 
 
     }
@@ -33,7 +35,7 @@ export class AddPlayersComponent implements OnInit {
 
   onSave():void{
 
-    this.playerData = playerform.value
+    this.playerData = this.playerform.value
     this.ms.AddPlayer(this.playerData).subscribe(()=>{
       alert("Record Added Successfully")
   //  this.router.navigate(['/listmovies'])

@@ -1,36 +1,36 @@
 <p>ADD-players works!</p>
 
 
-<form [formGroup]="playerform" (ngSubmit)="onSave()">
+<form [formGroup]="playerform" >
 
     <div  class="container jumbotron" style="width:500px;">
 
 
-        <div class="form-control">
+        <div>
 
         <label for="name">Name</label>
         <input type="text" id="name" name="name" formControlName="name" class="form-control">
         </div>
 
-        <div class="form-control">
-        <label for="Age">Name</label>
+        <div >
+        <label for="Age">Age</label>
         <input type="text" id="age" name="age" formControlName="age"  class="form-control">
         </div>
 
-        <div class="form-control">
-            <label for="teamId">Team ID</label>
-            <input type="text" id="teamId" name="teamId" formControlName="teamId"  class="form-control">
+        <div >
+            <label for="teamID">Team ID</label>
+            <input type="text" id="teamID" name="teamID" formControlName="teamID"  class="form-control">
         </div>
 
         
-        <div class="form-control">
-            <label for="category">Team ID</label>
+        <div>
+            <label for="category">Category</label>
             <input type="text" id="category" name="category" formControlName="category"  class="form-control">
         </div>
 
-        <div class="form-control">
-            <label for="biddingPrice">Team ID</label>
-            <input type="text" id="biddingPrice" name="biddingPrice" formControlName="biddingPrice">
+        <div >
+            <label for="biddingPrice">Bidding Price</label>
+            <input type="text" id="biddingPrice" name="biddingPrice" formControlName="biddingPrice" class="form-control">
         </div>
 
         <p>
