@@ -15,6 +15,9 @@ export class PlayerService {
   playerdata : Player[]
   teamData : Team[]
 
+  httpOptions = {headers : new HttpHeaders({'content-type':'application/json'})}
+   //httpOptions = {headers: new HttpHeaders({'content-type':'application/json'})}
+
   getPlayers():Observable<Player[]>
   {
     return this.httpclient.get<Player[]>(this.url1+'/ShowPlayers');
@@ -24,7 +27,7 @@ export class PlayerService {
     return this.httpclient.get<Team[]>(this.url1+'/ShowTeam');
   }
   AddPlayer(player :Player):Observable<Player>{
-    return this.httpclient.post<Player>(this.url1+'/')
+    return this.httpclient.post<Player>(this.url1+'/AddPlayer',player,this.httpOptions);
   }
 
 }
