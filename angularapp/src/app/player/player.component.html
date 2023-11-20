@@ -1,3 +1,5 @@
+<div class="playerBiddingPrice">{{newPlayer.biddingPrice}}</div>
+
 <div class="container">
     <div class="jumbotron">
        <h1 class="text-warning">Player Listing</h1>
@@ -17,19 +19,20 @@
                     <li>{{m.age}}</li>
                     <li>{{m.teamID}}</li>
                     <li>{{m.category}}</li>
-                    <li>{{m.biddingPrice}}</li>
+                    <li class="playerBiddingPrice">{{m.biddingPrice}}</li>
 
                     <li>
                         <button [routerLink] = "['/find/',m.id]">Details</button>
                     </li>
                     <li>
                         <button [routerLink] = "['/edit/',m.id]">Edit</button>
-                    </li>
-                    <li>
                         <button [routerLink] = "['/delete/',m.id]">Delete</button>
                     </li>
+                    <li>
+                       
+                    </li>
 
-                </tr>
+                </ul>
             </tbody>        
         </table>
     </div>
