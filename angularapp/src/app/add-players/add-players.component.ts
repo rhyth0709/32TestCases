@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../services/player.service';
-import { Player } from '../models/player.model';
+import { Player } from '../../models/player.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup,Validators,Validator,FormControl } from '@angular/forms';
