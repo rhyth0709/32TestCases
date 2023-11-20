@@ -23,5 +23,8 @@ export class PlayerService {
   {
     return this.httpclient.get<Team[]>(this.url1+'/ShowTeam');
   }
+  AddPlayer(player :Player):Observable<Player>{
+    return this.httpclient.post<Player>(this.url1+'/')
+  }
 
 }
