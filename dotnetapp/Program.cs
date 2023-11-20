@@ -13,6 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(o=>o.UseSqlServer("User ID=sa;password=examlyMssql@123; server=localhost;Database=PlayerDb;trusted_connection=false;Persist Security Info=False;Encrypt=False;"));
+builder.Services.AddCors(
+    options =>{ options.AddDefaultPolicy(
+        builder=>{
+            builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+        });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +31,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseCors();
 
 app.MapControllers();
 

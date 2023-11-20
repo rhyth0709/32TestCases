@@ -72,18 +72,25 @@ namespace dotnetapp.Controllers
         public IActionResult PutPlayer(int id,Player p)
         {
 
-             if(ModelState.IsValid)
-             {
+
+           try{
+           
                 Player player = _context.Players.Find(p.Id);
                 player.Age = p.Age;
+                player.Name = p.Name;
                 player.BiddingPrice = p.BiddingPrice;
                 player.Category = p.Category;
                 _context.SaveChanges();
                 return Ok();
             
-           }
+           
+        }
+        catch(Exception e)
+       {
 
-            return BadRequest("Unable to Edit Player");
+       }
+                   return BadRequest("Unable to Edit Player");
+
 
         }
         [HttpPut]
