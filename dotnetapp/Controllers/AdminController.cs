@@ -72,8 +72,8 @@ namespace dotnetapp.Controllers
         public IActionResult PutPlayer(int id,Player p)
         {
 
-            if(ModelState.IsValid)
-            {
+             if(ModelState.IsValid)
+             {
                 Player player = _context.Players.Find(p.Id);
                 player.Age = p.Age;
                 player.BiddingPrice = p.BiddingPrice;
@@ -81,7 +81,7 @@ namespace dotnetapp.Controllers
                 _context.SaveChanges();
                 return Ok();
             
-            }
+           }
 
             return BadRequest("Unable to Edit Player");
 
@@ -105,7 +105,7 @@ namespace dotnetapp.Controllers
         }
          [HttpDelete]
         [Route("DeletePlayer/{id}")]
-        public IActionResult DeletePlay(int id){
+        public IActionResult DeletePlayer(int id){
 
                 var data = _context.Players.Find(id);
                 if(data==null)
