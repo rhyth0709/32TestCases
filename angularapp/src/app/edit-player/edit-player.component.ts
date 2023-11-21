@@ -32,6 +32,7 @@ export class EditPlayerComponent implements OnInit {
     this.playerdata = player
     this.as.EditPlayer(this.playerdata).subscribe(()=>{
       alert("Record Edited successfully")
+      console.log(this.playerdata)
     })
    }
 
