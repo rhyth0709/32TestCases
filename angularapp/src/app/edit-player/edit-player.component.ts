@@ -34,8 +34,8 @@ export class EditPlayerComponent implements OnInit {
 
    }
 
-   onSave(){
-    this.playerdata = this.editForm.value
+   onSave(player : Player){
+    this.playerdata = player
     this.as.EditPlayer(this.playerdata).subscribe(()=>{
       alert("Record Edited successfully")
       console.log(this.playerdata)

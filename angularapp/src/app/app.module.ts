@@ -12,6 +12,8 @@ import { PlayerComponent } from './player/player.component';
 import { HomeComponent } from './home/home.component';
 import { AddTeamsComponent } from './add-teams/add-teams.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { MenuComponent } from './menu/menu.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +23,15 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     PlayerComponent,
     HomeComponent,
     AddTeamsComponent,
-    EditPlayerComponent
+    EditPlayerComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,25 +3,25 @@
 
 <div>
 
-    <form [formGroup]="editForm" (ngSubmit)="onSave()">
+    <form  (ngSubmit)="onSave(playerdata)" #playerform="ngForm">
 
         <div>
 
             <label for="name">Name</label>
-            <input id="name" type="text" name="name" formControlName="name" class="form-control">
+            <input id="name" type="text" name="name" class="form-control" [(ngModel)]="playerdata.name" >
     
         </div>
-        <div >
+        <!-- <div >
             <label for="teamID">Team ID</label>
-            <input type="text" id="teamID" name="teamID" formControlName="teamID"  class="form-control">
-        </div>   
+            <input type="text" id="teamID" name="teamID"  class="form-control"[(ngModel)]="playerdata.teamID">
+        </div>    -->
         <div>
             <label for="category">Category</label>
-            <input type="text" id="category" name="category" formControlName="category"  class="form-control">
+            <input type="text" id="category" name="category" class="form-control" [(ngModel)]="playerdata.category">
         </div>
         <div >
             <label for="biddingPrice">Bidding Price</label>
-            <input type="text" id="biddingPrice" name="biddingPrice" formControlName="biddingPrice" class="form-control">
+            <input type="text" id="biddingPrice" name="biddingPrice" class="form-control" [(ngModel)]="playerdata.biddingPrice">
         </div>
 
         <button class="btn btn-success" type="submit">Edit TEAM</button>
