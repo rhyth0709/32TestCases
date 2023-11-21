@@ -17,7 +17,12 @@ export class EditPlayerComponent implements OnInit {
 
 
     this.editForm = new FormGroup({
-      
+      id: new FormControl("",[Validators.required]),
+      name: new FormControl("",[Validators.required]),
+      age: new FormControl("",[Validators.required]),
+      category: new FormControl("",[Validators.required]),
+      teamID : new FormControl("",[Validators.required]),
+      biddingPrice: new FormControl("",[Validators.required]),
     })
 
     const tid = this.ar.snapshot.paramMap.get('id')
@@ -29,14 +34,14 @@ export class EditPlayerComponent implements OnInit {
    getPlayer(id :number){
     this.as.getPlayer(id).subscribe((data)=>{
       this.playerdata = data;
-
+ 
     })
 
    }
 
-   onSave(player:Player){
+   onSave(){
 
-    this.playerdata = player
+    this.playerdata = this.editForm.value
     this.as.EditPlayer(this.playerdata).subscribe(()=>{
       alert("Record Edited successfully")
       console.log(this.playerdata)
