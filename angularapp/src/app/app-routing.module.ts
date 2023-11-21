@@ -14,7 +14,8 @@ const routes: Routes = [
   {path:"edit/:id",component:EditPlayerComponent},
   {path:"listplayer",component:ListPlayersComponent},
   {path:"delete/:id",component:DeleteplayerComponent}
-
+//edit/:id 
+//delete/:id
 ];
 
 @NgModule({
