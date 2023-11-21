@@ -32,7 +32,7 @@ export class AdminService{
     return this.httpclient.post<Player>(this.url1+'/AddPlayer',player,this.httpOptions);
   }
   createTeam(player :Team):Observable<Team>{
-    return this.httpclient.post<Team>(this.url1+'/AddPlayer',player,this.httpOptions);
+    return this.httpclient.post<Team>(this.url1+'/AddTeam',player,this.httpOptions);
   }
 
 
