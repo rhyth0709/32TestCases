@@ -43,4 +43,11 @@ export class AdminService{
     return this.httpclient.put<Player>(this.url1+'/EditPlayer/'+player.id,player,this.httpOptions);
   }
 
+  //https://8080-abfbbcbcacdfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin/DeletePlayer/11
+
+  DeletePlayer(id:number):Observable<Player>
+  {
+    return this.httpclient.delete<Player>(this.url1+'/DeletePlayer/'+id,this.httpOptions);
+  }
+
 }
