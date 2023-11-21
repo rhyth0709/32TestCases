@@ -11,6 +11,7 @@ import { PlayerComponent } from './player/player.component';
 // import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AddTeamsComponent } from './add-teams/add-teams.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { AddTeamsComponent } from './add-teams/add-teams.component';
     AddPlayersComponent,
     PlayerComponent,
     HomeComponent,
-    AddTeamsComponent
+    AddTeamsComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,

@@ -37,6 +37,16 @@ namespace dotnetapp.Controllers
 
         }
 
+        [HttpGet]
+        [Route("GetPlayer/{id}")]
+ 
+        public IActionResult GetPlayer(int id){
+            var data = _context.Players.Find(id);
+            if(data==null)
+            return NotFound();
+            return Ok(data);
+        }
+
 
         [HttpPost]
         [Route("AddPlayer")]
