@@ -14,6 +14,7 @@ export class EditPlayerComponent implements OnInit {
   id:number
   playerdata :{id:number,name:string,age:number,category:string,biddingPrice:number}
   constructor(private as : AdminService,private ar:ActivatedRoute) {
+  }
 
 
     this.editForm = new FormGroup({
@@ -22,19 +23,16 @@ export class EditPlayerComponent implements OnInit {
       age: new FormControl("",[Validators.required]),
       category: new FormControl("",[Validators.required]),
       teamID : new FormControl("",[Validators.required]),
-      biddingPrice: new FormControl("",[Validators.required]),
-    })
-
-    const tid = this.ar.snapshot.paramMap.get('id')
-    this.id = Number(tid)
-    this.getPlayer(this.id)
-
-   }
+      biddingPrice: new FormControl("",[Validators.required])
+    });
+  
+  
 
    getPlayer(id :number){
     this.as.getPlayer(id).subscribe((data)=>{
-      this.playerdata = data;
- 
+     this.playerdata = data;
+     console.log(id)
+     console.log(this.playerdata)
     })
 
    }
@@ -50,6 +48,10 @@ export class EditPlayerComponent implements OnInit {
 
 
   ngOnInit(): void {
+    const tid = this.ar.snapshot.paramMap.get('id')
+    this.id = Number(tid)
+    this.getPlayer(this.id)
+
   }
 
-}
+}}
