@@ -38,7 +38,7 @@ export class AddPlayersComponent implements OnInit {
    this.playerData = this.playerform.value
    this.ms.AddPlayer(this.playerData).subscribe(()=>{
     alert("Record Added Successfully")
-  //  this.router.navigate(['/listmovies'])
+  this.router.navigate(['/listplayer'])
    })
   }
 

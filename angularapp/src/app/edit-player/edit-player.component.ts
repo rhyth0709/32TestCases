@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/models/player.model';
 import { AdminService } from '../services/admin.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { FormGroup,FormControl,Validators, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-edit-player',
   templateUrl: './edit-player.component.html',
@@ -13,14 +13,14 @@ export class EditPlayerComponent implements OnInit {
   id:number
   playerdata :{id:number,name:string,age:number,category:string,biddingPrice:number}
 
-  constructor(private as : AdminService,private ar:ActivatedRoute) {}
+  constructor(private fb :FormBuilder,private as : AdminService,private ar:ActivatedRoute) {}
   
-    editForm = new FormGroup({
-      name: new FormControl("",[Validators.required]),
-      age: new FormControl("",[Validators.required]),
-      category: new FormControl("",[Validators.required]),
-      teamID : new FormControl("",[Validators.required]),
-      biddingPrice: new FormControl("",[Validators.required])
+    editForm = this.fb.group({
+      name: ["",[Validators.required]],
+      age: ["",[Validators.required]],
+      category: ["",[Validators.required]],
+      teamID : ["",[Validators.required]],
+      biddingPrice: ["",[Validators.required]],
     });
   
   
