@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlayerComponent } from './player/player.component';
 // import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AddTeamsComponent } from './add-teams/add-teams.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     ListTeamsComponent,
     AddPlayersComponent,
     PlayerComponent,
-    HomeComponent
+    HomeComponent,
+    AddTeamsComponent
   ],
   imports: [
     BrowserModule,

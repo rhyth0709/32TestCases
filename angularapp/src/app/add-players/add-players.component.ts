@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup,Validators,Validator,FormControl } from '@angula
 export class AddPlayersComponent implements OnInit {
   
 
-  // playerData :Player = {id:0,name:'',age:0,teamID:0,category:'',biddingPrice:0}
+  playerData :Player = {id:0,name:'',age:0,category:'',biddingPrice:0}
 
 
   constructor(private fb:FormBuilder,private ms :PlayerService,private router:Router,private ar :ActivatedRoute) { }
@@ -35,11 +35,11 @@ export class AddPlayersComponent implements OnInit {
 
   onSave():void{
 
- //   this.playerData = this.playerform.value
- //   this.ms.AddPlayer(this.playerData).subscribe(()=>{
-  //    alert("Record Added Successfully")
+   this.playerData = this.playerform.value
+   this.ms.AddPlayer(this.playerData).subscribe(()=>{
+    alert("Record Added Successfully")
   //  this.router.navigate(['/listmovies'])
- //   })
+   })
   }
 
 
