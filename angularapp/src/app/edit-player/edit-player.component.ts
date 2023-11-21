@@ -9,16 +9,13 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
   styleUrls: ['./edit-player.component.css']
 })
 export class EditPlayerComponent implements OnInit {
-
-  editForm :FormGroup
+  //editForm :FormGroup
   id:number
   playerdata :{id:number,name:string,age:number,category:string,biddingPrice:number}
-  constructor(private as : AdminService,private ar:ActivatedRoute) {
-  }
 
-
-    this.editForm = new FormGroup({
-      id: new FormControl("",[Validators.required]),
+  constructor(private as : AdminService,private ar:ActivatedRoute) {}
+  
+    editForm = new FormGroup({
       name: new FormControl("",[Validators.required]),
       age: new FormControl("",[Validators.required]),
       category: new FormControl("",[Validators.required]),
@@ -38,7 +35,6 @@ export class EditPlayerComponent implements OnInit {
    }
 
    onSave(){
-
     this.playerdata = this.editForm.value
     this.as.EditPlayer(this.playerdata).subscribe(()=>{
       alert("Record Edited successfully")
@@ -54,4 +50,4 @@ export class EditPlayerComponent implements OnInit {
 
   }
 
-}}
+}
