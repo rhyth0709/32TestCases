@@ -3,7 +3,7 @@
 
 <div>
 
-    <form [formGroup]="editForm">
+    <form [formGroup]="editForm" (ngSubmit)="onSave(editForm)">
 
         <div>
 
@@ -23,7 +23,7 @@
             <label for="biddingPrice">Bidding Price</label>
             <input type="text" id="biddingPrice" name="biddingPrice" formControlName="biddingPrice" class="form-control">
         </div>
-        
-        <button class="btn btn-success" type="submit" (click)="onSave()">Edit TEAM</button>
+
+        <button class="btn btn-success" type="submit">Edit TEAM</button>
     </form>
 </div>
