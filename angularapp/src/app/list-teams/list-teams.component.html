@@ -14,9 +14,12 @@
                 <td>{{t.teamID}}</td>
                 <td>{{t.name}}</td>
                 <td>{{t.maximumBudget}}</td>
+               <td>
+                <a [routerLink] = "['/ed/',t.teamID]">Edit</a>
 
+               </td>
                 <td>
-                    <a routerLink="['/deleteteam/',t.teamID]">Delete</a>
+                    <a [routerLink]="['/del/',t.teamID]">Delete</a>
                 </td>
 
             </tr>

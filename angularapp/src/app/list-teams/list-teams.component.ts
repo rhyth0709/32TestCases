@@ -22,7 +22,7 @@ export class ListTeamsComponent implements OnInit {
   }
 
   onDisplay():void{
-    console.log(this.playerdata);
+    console.log(this.teams);
   }
 
 

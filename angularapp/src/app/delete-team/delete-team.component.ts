@@ -27,9 +27,9 @@ export class DeleteTeamComponent implements OnInit {
 
   saveData():void{
 
-    this.as.DeletePlayer(this.id).subscribe(()=>{
+    this.as.DeleteTeam(this.id).subscribe(()=>{
       alert("Deleted Successfully")
-      this.router.navigate(['/listteam'])
+      this.router.navigate(['/listteams'])
     })
   }
 

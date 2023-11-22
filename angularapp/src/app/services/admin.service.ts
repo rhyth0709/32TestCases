@@ -54,4 +54,9 @@ export class AdminService{
     return this.httpclient.delete<Player>(this.url1+'/DeletePlayer/'+id,this.httpOptions);
   }
 
+  DeleteTeam(id:number):Observable<Team>
+  {
+    return this.httpclient.delete<Team>(this.url1+'/DeleteTeam/'+id,this.httpOptions);
+  }
+
 }

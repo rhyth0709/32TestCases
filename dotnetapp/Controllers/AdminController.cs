@@ -47,6 +47,16 @@ namespace dotnetapp.Controllers
             return Ok(data);
         }
 
+        [HttpGet]
+        [Route("GetTeam/{id}")]
+ 
+        public IActionResult GetTeam(int id){
+            var data = _context.Teams.Find(id);
+            if(data==null)
+            return NotFound();
+            return Ok(data);
+        }
+
 
         [HttpPost]
         [Route("AddPlayer")]
