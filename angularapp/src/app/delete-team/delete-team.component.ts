@@ -29,7 +29,7 @@ export class DeleteTeamComponent implements OnInit {
 
     this.as.DeleteTeam(this.id).subscribe(()=>{
       alert("Deleted Successfully")
-      this.router.navigate(['/listteams'])
+      this.router.navigate(['/listeams'])
     })
   }
 
