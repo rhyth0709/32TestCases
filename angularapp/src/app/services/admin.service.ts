@@ -38,6 +38,10 @@ export class AdminService{
   {
      return this.httpclient.get<Player>(this.url1+'/GetPlayer/'+id)
   }
+  getTeam(id:number):Observable<Team>
+  {
+     return this.httpclient.get<Team>(this.url1+'/GetTeam/'+id)
+  }
   EditPlayer(player :Player):Observable<Player>
   {
     return this.httpclient.put<Player>(this.url1+'/EditPlayer/'+player.id,player,this.httpOptions);
