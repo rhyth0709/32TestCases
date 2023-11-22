@@ -7,13 +7,16 @@ import { AddPlayersComponent } from './add-players/add-players.component';
 import { ListPlayersComponent } from './list-players/list-players.component';
 import { FormGroup } from '@angular/forms';
 import { DeleteplayerComponent } from './deleteplayer/deleteplayer.component';
+import { ListTeamsComponent } from './list-teams/list-teams.component';
 const routes: Routes = [ 
   {path:"",component:HomeComponent},
   {path:"addteam",component:AddTeamsComponent},
   {path:"addplayer",component:AddPlayersComponent},
   {path:"edit/:id",component:EditPlayerComponent},
   {path:"listplayer",component:ListPlayersComponent},
-  {path:"delete/:id",component:DeleteplayerComponent}
+  {path:"delete/:id",component:DeleteplayerComponent},
+  {path: "listeams",component:ListTeamsComponent},
+  {path:"deleteteam/:id",component:DeleteplayerComponent}
 //edit/:id 
 //delete/:id
 ];
