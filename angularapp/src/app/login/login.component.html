@@ -1,2 +1,11 @@
-<p>login works!</p>
-<input type="text" id="username" [(ngModel)] = "username" name=""username" >
+<form>
+    <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    <div class="error-message" *ngIf="usernameError">{{ usernameError }}</div>
+    </div>
+     
+      <!-- Other form elements -->
+     
+      <button type="button" (click)="login()">Login</button>
+</form>
