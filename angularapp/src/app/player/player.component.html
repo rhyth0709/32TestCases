@@ -1,42 +1,32 @@
+<h3>Player List</h3>
+<table class="table">
+    <th>id</th>
+    <th>name</th>
+    <th>age</th>
+    <th>category</th>
+    <th>id</th>
+    <th>BiddingPrice</th>
+ 
+    <tr *ngFor="let m of players">
+        <td>{{m.id}}</td>
+        <td>{{m.name}}</td>
+        <td>{{m.age}}</td>
+        <td>{{m.category}}</td>
+        <td>{{m.teamId}}</td>
+        <td>{{m.biddingPrice}}</td>
+        <td><a [routerLink]="['/editplayer/',m.id]">EDIT</a></td>
+       
+ 
+ 
+        <td><a [routerLink]="['/playerbyid/',m.id]">Details</a></td>
+        <td><a [routerLink]="['/deleteplayer/',m.id]">DELETE</a></td>
+    </tr>
+</table>
+ 
+<td><a routerLink="/addplayer">ADD</a></td>
+<li>
+    <button>Edit</button>
+    <button>Delete</button>
+</li>
 
-<!-- <div *ngIf="newPlayer.biddingPrice!=undefined"> !-->
-<p id="playerBiddingPrice">{{newPlayer.biddingPrice}}</p>
-<div class="container">
-    <div class="jumbotron">
-       <h1 class="text-warning">Player Listing</h1>
-         <table class="table">
-            <thead>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>TeamID</th>
-                <th>Category</th>
-                <th>Bidding Price</th>
-
-            </thead>
-            <tbody>
-                <ul *ngFor="let m of playerdata;let i=index">
-                    <li>{{m.name}}</li>
-                    <li>{{m.age}}</li>
-                    <li>{{m.teamID}}</li>
-                    <li>{{m.category}}</li>
-                    <li id="abc">{{m.biddingPrice}}</li>
-
-                    <li>
-                        <button [routerLink] = "['/find/',m.id]">Details</button>
-                    </li>
-                    <li>
-                        <button [routerLink] = "['/edit/',m.id]">Edit</button>
-                        <button [routerLink] = "['/delete/',m.id]">Delete</button>
-                    </li>
-                    <li>
-                       
-                    </li>
-
-                </ul>
-            </tbody>        
-        </table>
-    </div>
-</div>
-
-<p id="playerBiddingPrice"></p>
+<p id="playerBiddingPrice">{newPlayer.B}</p>
