@@ -90,8 +90,8 @@ describe('AdminService Integration Tests', () => {
   });
 
   fit('Week5_Day5_should create a new team via the backend', (done: DoneFn) => {
-    const newTeam: Team = { teamID: 3, name: 'New Team', maximumBudget: 50000 };
-
+    const newTeam: Team = { Id: 23, name: 'New Team', maximumBudget: 50000, players: null };
+    console.log(newTeam);
     service.createTeam(newTeam).subscribe(
       (createdTeam: Team) => {
         expect(createdTeam).toEqual(newTeam);
