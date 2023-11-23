@@ -79,8 +79,13 @@ namespace dotnetapp.Controllers
         {
             if(ModelState.IsValid)
             {
+                int tID = t.Id;
+                if(t.Id > 0) t.Id = 0;
+
                 _context.Teams.Add(t);
                 _context.SaveChanges();
+
+                if(t.Id > 0) t.Id = tID;
             }
             return Created("Added Team",t);
         }
