@@ -18,7 +18,7 @@ password:string
 
    }
    showError:boolean=false
-  
+   usernameError:string;
 
 
   ngOnInit(): void {
@@ -27,6 +27,8 @@ password:string
     if(!this.username||!this.password)
       {
         this.showError=true; 
+        this.usernameError = 'Username is required';
+        return;
       }
       else
       {
