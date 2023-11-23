@@ -21,6 +21,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AdminComponent } from './admin/admin.component';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { ErrorComponent } from './error/error.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ErrorComponent } from './error/error.component';
     RegistrationComponent,
     AdminComponent,
     OrganizerComponent,
-    ErrorComponent
+    ErrorComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
