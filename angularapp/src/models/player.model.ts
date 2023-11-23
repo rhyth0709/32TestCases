@@ -1,3 +1,4 @@
+import { Team } from "./team.model"
 export class Player {
 
     id: number
@@ -5,5 +6,6 @@ export class Player {
     age: number
     // teamID: number
     category: string
-    biddingPrice: number
+    biddingPrice?: number
+    team?: Team
 }
