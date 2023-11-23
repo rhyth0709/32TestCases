@@ -11,7 +11,7 @@ export class AddTeamsComponent implements OnInit {
 
 
   teamForm : FormGroup
-  newTeam :{Id:number,name:string,maximumBudget:number}
+  newTeam :{id:number,name:string,maximumBudget:number}
 
   constructor(private as : AdminService) { 
 

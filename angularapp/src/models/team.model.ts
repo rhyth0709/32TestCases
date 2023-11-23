@@ -1,6 +1,5 @@
 export class Team {
-    Id: number
+    id: number
     name?: string
     maximumBudget?:number
-    players?: any
 }
