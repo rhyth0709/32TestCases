@@ -30,7 +30,7 @@ export class AdminService{
   }
   AddPlayer(player :Player):Observable<Player>{
     return this.httpclient.post<Player>(this.url1+'/AddPlayer',player,this.httpOptions);
-  }createTeam
+  }
   createTeam(player :Team):Observable<Team>{
     return this.httpclient.post<Team>(this.url1+'/AddTeam',player,this.httpOptions);
   }

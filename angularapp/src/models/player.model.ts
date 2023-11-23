@@ -6,6 +6,6 @@ export class Player {
     age: number
     // teamID: number
     category: string
-    biddingPrice?: number
-    team?: Team
+    biddingPrice: number
+    //team?: Team
 }
