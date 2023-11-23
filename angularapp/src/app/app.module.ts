@@ -18,6 +18,9 @@ import { DeleteplayerComponent } from './deleteplayer/deleteplayer.component';
 import { DeleteTeamComponent } from './delete-team/delete-team.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { AdminComponent } from './admin/admin.component';
+import { OrganizerComponent } from './organizer/organizer.component';
+import { ErrorComponent } from './error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,10 @@ import { RegistrationComponent } from './registration/registration.component';
     DeleteplayerComponent,
     DeleteTeamComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AdminComponent,
+    OrganizerComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
