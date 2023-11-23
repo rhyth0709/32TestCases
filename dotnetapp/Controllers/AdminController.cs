@@ -120,7 +120,7 @@ namespace dotnetapp.Controllers
 
             if(ModelState.IsValid)
             {
-                Team team = _context.Teams.Find(t.TeamID);
+                Team team = _context.Teams.Find(t.Id);
                 team.Name = t.Name;
                 _context.SaveChanges();
                 return Ok();

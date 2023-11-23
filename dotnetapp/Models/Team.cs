@@ -9,7 +9,7 @@ namespace dotnetapp.Models{
 
 
         [Key]
-        public int TeamID{get;set;}
+        public int Id{get;set;}
         public string Name{get;set;}
         public int maximumBudget{get;set;}
         public ICollection<Player>?Players{get;set;}
