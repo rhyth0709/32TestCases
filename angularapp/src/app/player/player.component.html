@@ -1,7 +1,6 @@
 
-<!-- <div *ngIf="newPlayer.biddingPrice!=undefined">
-<div class="playerBiddingPrice">{{newPlayer.biddingPrice}}</div>
-</div> -->
+<!-- <div *ngIf="newPlayer.biddingPrice!=undefined"> !-->
+<p id="playerBiddingPrice">{{newPlayer.biddingPrice}}</p>
 <div class="container">
     <div class="jumbotron">
        <h1 class="text-warning">Player Listing</h1>
@@ -21,7 +20,7 @@
                     <li>{{m.age}}</li>
                     <li>{{m.teamID}}</li>
                     <li>{{m.category}}</li>
-                    <li class="playerBiddingPrice">{{m.biddingPrice}}</li>
+                    <li id="abc">{{m.biddingPrice}}</li>
 
                     <li>
                         <button [routerLink] = "['/find/',m.id]">Details</button>

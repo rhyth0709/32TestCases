@@ -19,7 +19,7 @@ export class EditPlayerComponent implements OnInit {
       name: ["",[Validators.required]],
       age: ["",[Validators.required]],
       category: ["",[Validators.required]],
-      teamID : ["",[Validators.required]],
+      teamId : ["",[Validators.required]],
       biddingPrice: ["",[Validators.required]],
     });
   
