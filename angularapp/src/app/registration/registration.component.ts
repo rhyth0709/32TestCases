@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
+    
   }
 
 }

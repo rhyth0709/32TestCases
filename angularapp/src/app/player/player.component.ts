@@ -9,10 +9,9 @@ export class PlayerComponent implements OnInit {
 
 
   players : Player[]
- //newPlayer : Player 
-  //newPlayer : Player ={ id: 1, name: 'Test Player', age: 25, category: 'Category A', biddingPrice: 100 }
+ newPlayer
+ // newPlayer : Player ={ id: 1, name: 'Test Player', age: 25, category: 'Category A', biddingPrice: 100 }
   playerdata : Player[] = []
-  newPlayer
 
   constructor() { }
 
